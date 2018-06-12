@@ -20,12 +20,12 @@ Unit conversion for climate4R objects
 \details{
 \strong{Unit conversion and consistency checks}
 
-This function is a wrapper of the \code{\link[rudunits2]{ud.convert}} function from the UCAR's UDUNITS
+This function is a wrapper of the \code{\link[udunits2]{ud.convert}} function from the UCAR's UDUNITS
 R bindings, tailored to the climate4R CDM. The function performs a number of checks in order to ensure that: (i) the
 units of the input grid and the new units are recognised by the UDUNITS database and (ii), that
 the conversion between input and output units is possible. This is internally achieved by the functions
-(i) \code{\link[rudunits2]{ud.is.parseable}} and (ii) \code{\link[rudunits2]{ud.are.convertible}}
- from package \pkg{rudunits2}.
+(i) \code{\link[udunits2]{ud.is.parseable}} and (ii) \code{\link[udunits2]{ud.are.convertible}}
+ from package \pkg{udunits2}.
 
 \strong{Multigrid support}
 
@@ -56,6 +56,9 @@ getGridUnits(mg)
 # Convert all variables:
 mg.conv <- udConvertGrid(mg, new.units = c("mmHg", "celsius"))
 getGridUnits(mg.conv)
+}
+\references{
+\url{https://www.unidata.ucar.edu/software/udunits}
 }
 \seealso{
 \code{\link[transformeR]{getGridUnits}}, for accessing the \code{"units"} attribute of a grid and

@@ -24,12 +24,12 @@
 #'
 #' \strong{Unit conversion and consistency checks}
 #'
-#' This function is a wrapper of the \code{\link[rudunits2]{ud.convert}} function from the UCAR's UDUNITS
+#' This function is a wrapper of the \code{\link[udunits2]{ud.convert}} function from the UCAR's UDUNITS
 #' R bindings, tailored to the climate4R CDM. The function performs a number of checks in order to ensure that: (i) the
 #' units of the input grid and the new units are recognised by the UDUNITS database and (ii), that
 #' the conversion between input and output units is possible. This is internally achieved by the functions
-#' (i) \code{\link[rudunits2]{ud.is.parseable}} and (ii) \code{\link[rudunits2]{ud.are.convertible}}
-#'  from package \pkg{rudunits2}.
+#' (i) \code{\link[udunits2]{ud.is.parseable}} and (ii) \code{\link[udunits2]{ud.are.convertible}}
+#'  from package \pkg{udunits2}.
 #'
 #' \strong{Multigrid support}
 #'
@@ -37,13 +37,17 @@
 #' number of variables within the multigrid (shape of \code{'var'} dimension), and preserve its ordering (otherwise failing in
 #' the above-mentioned consistency checks).
 #'
-#' @importFrom transformeR isGrid getGridUnits
+#' @importFrom transformeR isGrid getGridUnits getShape getVarNames makeMultiGrid setGridUnits subsetGrid redim
 #' @importFrom udunits2 ud.is.parseable ud.are.convertible ud.convert
 #' @importFrom magrittr %<>%
 #' @seealso \code{\link[transformeR]{getGridUnits}}, for accessing the \code{"units"} attribute of a grid and
 #' \code{\link[transformeR]{setGridUnits}}, to manually modify it.
 #' @export
 #' @author J Bedia
+#' @references
+#'
+#' \url{https://www.unidata.ucar.edu/software/udunits}
+#'
 #' @examples
 #' library(transformeR)
 #' data("NCEP_Iberia_ta850")
