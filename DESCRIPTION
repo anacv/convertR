@@ -2,7 +2,7 @@ Package: convertR
 Depends:
     R(>= 3.4.0),
     udunits2,
-    transformeR
+    transformeR(>= 1.4.2)
 Imports:
     magrittr
 Suggests:
@@ -13,7 +13,7 @@ Suggests:
 Type: Package
 Title: A climate4R Package (http://meteo.unican.es/climate4r) for Handling Unit Transformations and Variable derivation
 Version: 0.1.0
-Date: 2018-06-11
+Date: 2018-06-12
 Authors@R: as.person(c(
     "Santander Meteorology Group <http://meteo.unican.es> [cph]",
     "Joaquin Bedia <bediaj@unican.es> [aut, cre]",
@@ -21,8 +21,7 @@ Authors@R: as.person(c(
 BugReports: https://github.com/SantanderMetGroup/convertR/issues
 URL: https://github.com/SantanderMetGroup/convertR
 Encoding: UTF-8
-Description: Implements different variable derivations and unit transformations. 
-Imports functionalities from the UCAR's UDUNITS software and its udunits2 R bindings
+Description: Implements different variable derivations and unit transformations. Imports functionalities from the UCAR's UDUNITS software and its udunits2 R bindings
 License: file LICENSE
 LazyData: true
 RoxygenNote: 6.0.1
