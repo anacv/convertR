@@ -37,7 +37,7 @@
 #' number of variables within the multigrid (shape of \code{'var'} dimension), and preserve its ordering (otherwise failing in
 #' the above-mentioned consistency checks).
 #'
-#' @importFrom transformeR isGrid getGridUnits getShape getVarNames makeMultiGrid setGridUnits subsetGrid redim
+#' @import transformeR
 #' @importFrom udunits2 ud.is.parseable ud.are.convertible ud.convert
 #' @importFrom magrittr %<>%
 #' @seealso \code{\link[transformeR]{getGridUnits}}, for accessing the \code{"units"} attribute of a grid and
