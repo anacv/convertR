@@ -24,7 +24,7 @@
 #' @return A climate4R grid of estimated cloud cover
 #' @author J. Bedia, S. Herrera
 #' @export
-#' @importFrom transformeR isGrid redim checkSeason checkDim getGridUnits getRefDates subsetGrid mat2Dto3Darray array3Dto2Dmat bindGrid gridArithmetics
+#' @import transformeR
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
 #' @examples
@@ -68,7 +68,7 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
             rlds <- udConvertGrid(rlds, new.units = "W.m-2") %>% redim(member = TRUE)
         }
         if (!is.null(rtds)) message("NOTE: rtds argument will be ignored, and calculated from rlds and rsds provided")
-        rtds <- gridArithmetics(rlds, rsds, operator = "+")
+        rtds <- gridArithmetics(rlds, rsds, operator = "+") %>% redim(member = TRUE)
         rsds <- rlds <- NULL
     } else {
         u1 <- getGridUnits(rtds)
@@ -79,7 +79,6 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
             rtds <- udConvertGrid(rtds, new.units = "W.m-2") %>% redim(member = TRUE)
         }
     }
-    rtds %<>% redim(member = TRUE)
     jday <- getRefDates(rtds) %>% as.Date() %>% format("%j") %>% as.integer()
     coords <- getCoordinates(rtds)
     ref.coords <- expand.grid(coords$y, coords$x)[2:1]
@@ -88,7 +87,7 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
     R0 <- 990 * sin(alpha * 2 * pi / 360) - 30
     n.mem <- getShape(rtds, "member")
     l <- lapply(1:n.mem, function(x) {
-        tot.rad <- subsetGrid(rtds, member = x, drop = TRUE) %>% redim(member = FALSE) %>% extract2("Data") %>% array3Dto2Dmat()
+        tot.rad <- subsetGrid(rtds, members = x, drop = TRUE) %>% redim(member = FALSE) %>% extract2("Data") %>% array3Dto2Dmat()
         a <- exp(log((R0 - tot.rad) / (.75 * R0)) / 3.4)
         a[which(R0 - tot.rad < 0)] <- 0
         rtds$Data <- mat2Dto3Darray(a, x = coords$x, y = coords$y)
@@ -98,7 +97,7 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
     cc$Variable$varName <- "clt"
     cc$Variable$level <- NULL
     attr(cc$Variable, "units") <- "1"
-    attr(cc$Variable, "longname") <- "Cloud_area_fraction"
+    attr(cc$Variable, "longname") <- "cloud_area_fraction"
     attr(cc$Variable, "description") <- "Estimated cloud area fraction from radiation"
     invisible(cc)
 }
