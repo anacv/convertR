@@ -17,7 +17,7 @@ Date: 2018-06-13
 Authors@R: as.person(c(
     "Santander Meteorology Group <http://meteo.unican.es> [cph]",
     "Joaquin Bedia <bediaj@unican.es> [aut, cre]",
-    "Sixto Herrera <sixto@predictia.es> [ctb]"))
+    "Sixto Herrera <herreras@unican.es> [aut]"))
 BugReports: https://github.com/SantanderMetGroup/convertR/issues
 URL: https://github.com/SantanderMetGroup/convertR
 Encoding: UTF-8
