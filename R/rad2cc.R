@@ -43,11 +43,11 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
     # Consistency checks:
     if (is.null(rtds)) {
         stopifnot(!is.null(rsds) & !is.null(rlds))
-        stopifnot(isGrid(rsds))
-        stopifnot(isGrid(rlds))
+        if (isMultigrid(rsds) | isMultigrid(rlds)) stop("Multigrids are not an allowed input")
+        stopifnot(isGrid(rsds) | isGrid(rlds))
         # Redim to have members:
-        rsds  %<>%  redim(member = TRUE, var = FALSE)
-        rlds %<>%  redim(member = TRUE, var = FALSE)
+        rsds  %<>%  redim(member = TRUE)
+        rlds %<>%  redim(member = TRUE)
         # Check dim
         suppressMessages(checkDim(rsds, rlds))
         # Check season
@@ -76,8 +76,9 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
             if (!ud.are.convertible(u1, "W.m-2")) {
                 stop("Non compliant rtds units (should be convertible to \'W.m-2\')")
             }
-            rtds <- udConvertGrid(rtds, new.units = "W.m-2") %>% redim(member = TRUE)
+            rtds <- udConvertGrid(rtds, new.units = "W.m-2")
         }
+        rtds %<>% redim(member = TRUE)
     }
     jday <- getRefDates(rtds) %>% as.Date() %>% format("%j") %>% as.integer()
     coords <- getCoordinates(rtds)
