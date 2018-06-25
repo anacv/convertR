@@ -2,4 +2,5 @@
 
 ## v0.1.0
  * First public release with the `udConvertGrid` function for grid unit conversion
- * First version of rad2cc formula, estimating cloud cover area fraction from radiation data
+ * Derivation utilities `rad2cc` and `huss2hurs`
+ * Added example datasets from NCEP reanalysis

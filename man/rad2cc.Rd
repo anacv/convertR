@@ -19,17 +19,32 @@ A climate4R grid of estimated cloud cover
 \description{
 Cloud cover estimation from radiation data
 }
+\section{Input units}{
+
+In principle, the derivation functions will work regardless of the input units, as all units are internally
+ converted as necessary according to the specific formulae definitions.
+  However, the units string (see \code{\link[transformeR]{getGridUnits}}) must be parseable. In the same vein,
+  the input units need to be convertible to the required ones. Unit consistency is internally achieved
+  by the function \code{\link{udConvertGrid}}.
+}
+
 \examples{
 data("rsds.iberia")
 data("rlds.iberia")
 cc <- rad2cc(rsds.iberia, rlds.iberia)
-library(visualizeR)
+\dontrun{
+require(visualizeR)
 spatialPlot(climatology(cc), rev.colors = TRUE, backdrop.theme = "coastline")
+}
 # Total radiation can be alternatively used:
-library(transformeR)
+require(transformeR)
 rtds <- gridArithmetics(rsds.iberia, rlds.iberia, operator = "+")
 cc2 <- rad2cc(rtds = rtds)
 identical(cc2, cc)
+}
+\seealso{
+Other derivation: \code{\link{huss2hurs}},
+  \code{\link{tas2ws}}
 }
 \author{
 J. Bedia, S. Herrera

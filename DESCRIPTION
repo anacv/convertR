@@ -13,7 +13,7 @@ Suggests:
 Type: Package
 Title: A climate4R Package for Handling Unit Transformations and Variable derivation
 Version: 0.1.0
-Date: 2018-06-13
+Date: 2018-06-25
 Authors@R: as.person(c(
     "Santander Meteorology Group <http://meteo.unican.es> [cph]",
     "Joaquin Bedia <bediaj@unican.es> [aut, cre]",
