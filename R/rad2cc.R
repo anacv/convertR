@@ -24,17 +24,21 @@
 #' @return A climate4R grid of estimated cloud cover
 #' @author J. Bedia, S. Herrera
 #' @export
+#' @template templateUnits
 #' @import transformeR
+#' @family derivation
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
 #' @examples
 #' data("rsds.iberia")
 #' data("rlds.iberia")
 #' cc <- rad2cc(rsds.iberia, rlds.iberia)
-#' library(visualizeR)
+#' \dontrun{
+#' require(visualizeR)
 #' spatialPlot(climatology(cc), rev.colors = TRUE, backdrop.theme = "coastline")
+#' }
 #' # Total radiation can be alternatively used:
-#' library(transformeR)
+#' require(transformeR)
 #' rtds <- gridArithmetics(rsds.iberia, rlds.iberia, operator = "+")
 #' cc2 <- rad2cc(rtds = rtds)
 #' identical(cc2, cc)
@@ -59,12 +63,14 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
             if (!ud.are.convertible(u1, "W.m-2")) {
                 stop("Non compliant rsds units (should be convertible to \'W.m-2\')")
             }
+            message("Converting units ...")
             rsds <- udConvertGrid(rsds, new.units = "W.m-2") %>% redim(member = TRUE)
         }
         if (u2 != "W.m-2") {
             if (!ud.are.convertible(u2, "W.m-2")) {
                 stop("Non compliant rlds units (should be convertible to \'W.m-2\')")
             }
+            message("Converting units ...")
             rlds <- udConvertGrid(rlds, new.units = "W.m-2") %>% redim(member = TRUE)
         }
         if (!is.null(rtds)) message("NOTE: rtds argument will be ignored, and calculated from rlds and rsds provided")
@@ -80,6 +86,7 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
         }
         rtds %<>% redim(member = TRUE)
     }
+    message("[", Sys.time(), "] Estimating cloud cover ...")
     jday <- getRefDates(rtds) %>% as.Date() %>% format("%j") %>% as.integer()
     coords <- getCoordinates(rtds)
     ref.coords <- expand.grid(coords$y, coords$x)[2:1]
@@ -89,7 +96,7 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
     n.mem <- getShape(rtds, "member")
     l <- lapply(1:n.mem, function(x) {
         tot.rad <- subsetGrid(rtds, members = x, drop = TRUE) %>% redim(member = FALSE) %>% extract2("Data") %>% array3Dto2Dmat()
-        a <- exp(log((R0 - tot.rad) / (.75 * R0)) / 3.4)
+        a <- suppressWarnings(exp(log((R0 - tot.rad) / (.75 * R0)) / 3.4))
         a[which(R0 - tot.rad < 0)] <- 0
         rtds$Data <- mat2Dto3Darray(a, x = coords$x, y = coords$y)
         return(rtds)
@@ -100,5 +107,6 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
     attr(cc$Variable, "units") <- "1"
     attr(cc$Variable, "longname") <- "cloud_area_fraction"
     attr(cc$Variable, "description") <- "Estimated cloud area fraction from radiation"
+    message("[", Sys.time(), "] Done.")
     invisible(cc)
 }
