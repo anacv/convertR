@@ -1,14 +1,15 @@
 # convertR changelog file
 
-## v0.1.0
+## v0.1.0 (25 Jun 2018)
  * First public release with the `udConvertGrid` function for grid unit conversion
  * Derivation utilities `rad2cc` and `huss2hurs`
  * Added example datasets from NCEP reanalysis
 
-## v0.1.1
+## v0.1.1 (26 Jun 2018)
  * New derivation functions:
    * `hurs2w` for water vapor mixing ratio estimation
    * `hurs2huss` for conversion from relative to specific humidity
    * `huss2pvp`, for partial vapor pressure estimation from specific humidity
+   * `tas2ws`, for water vapor saturation pressure calculation from temperature
  * Add references to methods
  * Other minor changes and documentation updates
