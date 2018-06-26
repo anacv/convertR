@@ -20,10 +20,13 @@
 #' @description Calculates the saturation pressure using near-surface air temperature and surface pressure data
 #' @param tas Near-surface air temperature
 #' @param ps Surface pressure
-#' @return A climate4R grid of saturation pressure (in atm)
+#' @return A climate4R CDM grid of water vapor saturation pressure (in atm)
 #' @author J. Bedia, S. Herrera
 #' @keywords internal
 #' @export
+#' @details  The vapour pressure of water is the pressure at which water vapour is in thermodynamic equilibrium
+#'  with its condensed state. At higher pressures water would condense. At this equilibrium condition
+#'  the vapor pressure is the saturation pressure.
 #' @import transformeR
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
@@ -89,8 +92,8 @@ tas2ws <- function(tas, ps) {
     wt$Variable$varName <- "ws"
     wt$Variable$level <- NULL
     attr(wt$Variable, "units") <- "atm"
-    attr(wt$Variable, "longname") <- "Vapour_pressure_of_water"
-    attr(wt$Variable, "description") <- "The vapour pressure of water is the pressure at which water vapour is in thermodynamic equilibrium with its condensed state"
+    attr(wt$Variable, "longname") <- "water_vapour_saturation_pressure"
+    attr(wt$Variable, "description") <- "Estimated water vapour saturation pressure"
     message("[", Sys.time(), "] Done.")
     invisible(wt)
 }
