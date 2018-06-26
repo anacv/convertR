@@ -13,9 +13,13 @@ library(convertR)
 data("ps.iberia")
 transformeR::getGridUnits(ps.iberia)
 ## [1] "Pascals"
+range(ps.iberia$Data)
+## [1]  86657.5 105690.0
 ps.mmHg <- udConvertGrid(ps.iberia, new.units = "mmHg")
 transformeR::getGridUnits(ps.mmHg)
 ## [1] "mmHg"
+range(ps.mmHg$Data)
+## [1] 649.9846 792.7401
 ```
 
 ## Available variable derivations
