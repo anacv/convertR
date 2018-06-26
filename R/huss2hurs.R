@@ -29,6 +29,7 @@
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
 #' @family derivation
+#' @template templateRefHumidity
 #' @examples
 #' data("ps.iberia")
 #' data("tas.iberia")
@@ -53,31 +54,32 @@ huss2hurs <- function(huss, ps, tas) {
     checkSeason(huss, ps, tas)
     # Check units
     u.huss <- getGridUnits(huss)
-    if (u.huss != "1") {
-        if (!ud.are.convertible(u.huss, "1")) {
-            stop("Non compliant huss units (should be convertible to \'1\')")
+    if (u.huss != "kg/kg") {
+        if (!ud.are.convertible(u.huss, "kg/kg")) {
+            stop("Non compliant huss units (should be convertible to \'kg/kg\')")
         }
-        message("Converting units ...")
-        huss <- udConvertGrid(huss, new.units = "1")
+        message("[", Sys.time(), "] Converting units ...")
+        huss <- udConvertGrid(huss, new.units = "kg/kg")
     }
     huss %<>% redim(member = TRUE)
     message("[", Sys.time(), "] Calculating Relative humidity ...")
     ws <- suppressMessages(tas2ws(tas, ps)) %>% redim(member = TRUE)
+    tas <- NULL
     coords <- getCoordinates(huss)
     n.mem <- getShape(huss, "member")
     l <- lapply(1:n.mem, function(x) {
         a <- subsetGrid(huss, members = x, drop = TRUE) %>% redim(member = FALSE) %>% extract2("Data") %>% array3Dto2Dmat()
         b <- subsetGrid(ws, members = x, drop = TRUE) %>% redim(member = FALSE) %>% extract2("Data") %>% array3Dto2Dmat()
-        w <- a/(1 - a) # w = mixing ratio
+        w <- a/(1 - a) # w = mixing (mass) ratio
         a <- 100 * w/b
-        huss$Data <- mat2Dto3Darray(a, x = coords$x, y = coords$y)
+        ps$Data <- mat2Dto3Darray(a, x = coords$x, y = coords$y)
         a <- b <- NULL
-        return(huss)
+        return(ps)
     })
-    tas <- ps <- huss <- NULL
+    huss <- ws <- ps <- NULL
     hurs <- suppressWarnings(bindGrid(l, dimension = "member"))
     hurs$Variable$varName <- "hurs"
-    hurs$Variable$level <- NULL
+    wt$Variable$level <- NULL
     attr(hurs$Variable, "units") <- "%"
     attr(hurs$Variable, "longname") <- "Surface_air_relative_humidity"
     attr(hurs$Variable, "description") <- "Estimated relative humidity from saturation pressure and specific humidity"

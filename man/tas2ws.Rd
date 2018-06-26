@@ -12,7 +12,7 @@ tas2ws(tas, ps)
 \item{ps}{Surface pressure}
 }
 \value{
-A climate4R grid of saturation pressure (in Pascals)
+A climate4R grid of saturation pressure (in atm)
 }
 \description{
 Calculates the saturation pressure using near-surface air temperature and surface pressure data
@@ -27,15 +27,22 @@ In principle, the derivation functions will work regardless of the input units, 
 }
 
 \examples{
-\dontrun{
 data("ps.iberia")
 data("tas.iberia")
 ws <- tas2ws(tas.iberia, ps.iberia)
-library(visualizeR)
-spatialPlot(climatology(ws), backdrop.theme = "coastline")}
+\dontrun{
+require(visualizeR)
+spatialPlot(climatology(ws), backdrop.theme = "coastline")
+}
+}
+\references{
+\itemize{
+\item Gregory, D. (2000), Atmospheric thermodynamics. By Craig F. Bohren and Bruce A. Albrecht. Oxford University Press. xiv + 402 pp. Price £49.50 (hardback). ISBN 019 5099044. Q.J.R. Meteorol. Soc., 126: 2631-2632. doi:10.1002/qj.49712656815
+}
 }
 \seealso{
-Other derivation: \code{\link{huss2hurs}},
+Other derivation: \code{\link{hurs2huss}},
+  \code{\link{hurs2w}}, \code{\link{huss2hurs}},
   \code{\link{rad2cc}}
 }
 \author{

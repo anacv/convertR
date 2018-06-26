@@ -43,7 +43,8 @@ cc2 <- rad2cc(rtds = rtds)
 identical(cc2, cc)
 }
 \seealso{
-Other derivation: \code{\link{huss2hurs}},
+Other derivation: \code{\link{hurs2huss}},
+  \code{\link{hurs2w}}, \code{\link{huss2hurs}},
   \code{\link{tas2ws}}
 }
 \author{

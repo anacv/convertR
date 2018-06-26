@@ -63,14 +63,14 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
             if (!ud.are.convertible(u1, "W.m-2")) {
                 stop("Non compliant rsds units (should be convertible to \'W.m-2\')")
             }
-            message("Converting units ...")
+            message("[", Sys.time(), "] Converting units ...")
             rsds <- udConvertGrid(rsds, new.units = "W.m-2") %>% redim(member = TRUE)
         }
         if (u2 != "W.m-2") {
             if (!ud.are.convertible(u2, "W.m-2")) {
                 stop("Non compliant rlds units (should be convertible to \'W.m-2\')")
             }
-            message("Converting units ...")
+            message("[", Sys.time(), "] Converting units ...")
             rlds <- udConvertGrid(rlds, new.units = "W.m-2") %>% redim(member = TRUE)
         }
         if (!is.null(rtds)) message("NOTE: rtds argument will be ignored, and calculated from rlds and rsds provided")
@@ -94,13 +94,15 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
     alpha <- matrix(90 + ref.coords[ ,2], ncol = nrow(ref.coords), nrow = length(jday), byrow = TRUE) - delta
     R0 <- 990 * sin(alpha * 2 * pi / 360) - 30
     n.mem <- getShape(rtds, "member")
+    cc <- rtds
     l <- lapply(1:n.mem, function(x) {
         tot.rad <- subsetGrid(rtds, members = x, drop = TRUE) %>% redim(member = FALSE) %>% extract2("Data") %>% array3Dto2Dmat()
         a <- suppressWarnings(exp(log((R0 - tot.rad) / (.75 * R0)) / 3.4))
         a[which(R0 - tot.rad < 0)] <- 0
-        rtds$Data <- mat2Dto3Darray(a, x = coords$x, y = coords$y)
-        return(rtds)
+        cc$Data <- mat2Dto3Darray(a, x = coords$x, y = coords$y)
+        return(cc)
     })
+    rtds <- NULL
     cc <- suppressWarnings(bindGrid(l, dimension = "member"))
     cc$Variable$varName <- "clt"
     cc$Variable$level <- NULL
