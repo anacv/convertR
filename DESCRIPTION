@@ -11,9 +11,9 @@ Suggests:
     loadeR.ECOMS,
     visualizeR
 Type: Package
-Title: A climate4R Package for Handling Unit Transformations and Variable derivation
-Version: 0.1.0
-Date: 2018-06-25
+Title: A climate4R Package for Performing Unit Conversion and Variable Derivation
+Version: 0.1.1
+Date: 2018-06-26
 Authors@R: as.person(c(
     "Santander Meteorology Group <http://meteo.unican.es> [cph]",
     "Joaquin Bedia <bediaj@unican.es> [aut, cre]",

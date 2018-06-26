@@ -79,7 +79,7 @@ huss2hurs <- function(huss, ps, tas) {
     huss <- ws <- ps <- NULL
     hurs <- suppressWarnings(bindGrid(l, dimension = "member"))
     hurs$Variable$varName <- "hurs"
-    wt$Variable$level <- NULL
+    hurs$Variable$level <- NULL
     attr(hurs$Variable, "units") <- "%"
     attr(hurs$Variable, "longname") <- "Surface_air_relative_humidity"
     attr(hurs$Variable, "description") <- "Estimated relative humidity from saturation pressure and specific humidity"

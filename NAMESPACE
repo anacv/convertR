@@ -3,6 +3,7 @@
 export(hurs2huss)
 export(hurs2w)
 export(huss2hurs)
+export(huss2pvp)
 export(rad2cc)
 export(tas2ws)
 export(udConvertGrid)

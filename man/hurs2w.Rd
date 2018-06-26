@@ -59,8 +59,8 @@ spatialPlot(climatology(w), rev.colors = TRUE, backdrop.theme = "coastline")
 }
 \seealso{
 Other derivation: \code{\link{hurs2huss}},
-  \code{\link{huss2hurs}}, \code{\link{rad2cc}},
-  \code{\link{tas2ws}}
+  \code{\link{huss2hurs}}, \code{\link{huss2pvp}},
+  \code{\link{rad2cc}}, \code{\link{tas2ws}}
 }
 \author{
 J. Bedia, S. Herrera

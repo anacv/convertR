@@ -12,10 +12,15 @@ tas2ws(tas, ps)
 \item{ps}{Surface pressure}
 }
 \value{
-A climate4R grid of saturation pressure (in atm)
+A climate4R CDM grid of water vapor saturation pressure (in atm)
 }
 \description{
 Calculates the saturation pressure using near-surface air temperature and surface pressure data
+}
+\details{
+The vapour pressure of water is the pressure at which water vapour is in thermodynamic equilibrium
+ with its condensed state. At higher pressures water would condense. At this equilibrium condition
+ the vapor pressure is the saturation pressure.
 }
 \section{Input units}{
 
@@ -43,7 +48,7 @@ spatialPlot(climatology(ws), backdrop.theme = "coastline")
 \seealso{
 Other derivation: \code{\link{hurs2huss}},
   \code{\link{hurs2w}}, \code{\link{huss2hurs}},
-  \code{\link{rad2cc}}
+  \code{\link{huss2pvp}}, \code{\link{rad2cc}}
 }
 \author{
 J. Bedia, S. Herrera
