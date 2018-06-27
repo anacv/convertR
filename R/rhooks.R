@@ -35,4 +35,4 @@
 
 #' @importFrom utils globalVariables
 
-if (getRversion() >= "3.1.0") utils::globalVariables(c("Rv", "Rd", "epsilon", "T0", "es0", "GammaST"))
+if (getRversion() >= "3.1.0") utils::globalVariables(c("Rv", "Rd", "epsilon", "T0", "es0", "GammaST", "g"))
