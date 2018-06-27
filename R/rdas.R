@@ -13,6 +13,12 @@ NULL
 #' @template templateDatasets
 NULL
 
+#' @title Sea-level pressure gridded dataset (var = \code{"psl"})
+#' @name psl.iberia
+#' @template templateDatasets
+NULL
+
+
 #' @title Longwave incoming solar radiation gridded dataset (var = \code{"rlds"})
 #' @name rlds.iberia
 #' @template templateDatasets
