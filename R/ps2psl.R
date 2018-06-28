@@ -98,7 +98,7 @@ ps2psl <- function(ps, tas, zgs) {
     l <- lapply(1:n.mem, function(x) {
         p <- subsetGrid(ps, members = x, drop = TRUE) %>% redim(member = FALSE) %>% extract2("Data") %>% array3Dto2Dmat()
         t <- subsetGrid(tas, members = x, drop = TRUE) %>% redim(member = FALSE) %>% extract2("Data") %>% array3Dto2Dmat()
-        aux <- .reducePressure(p = p, t = t, zgs = zgs, direction = "ps2psl")
+        aux <- reducePressure(p = p, t = t, zgs = zgs, direction = "ps2psl")
         psl$Data <- mat2Dto3Darray(aux, coords$x, coords$y)
         return(psl)
     })
