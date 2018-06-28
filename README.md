@@ -30,7 +30,7 @@ range(ps.mmHg$Data)
 ## [1] 649.9846 792.7401
 ```
 
-## Available variable derivations
+## Derivation of physical quantities
 
 In the following table the available variable derivations are summarized, including the input variables. The nomenclature of the input variables to calculate the derivations is according to the [climate4R vocabulary](https://github.com/SantanderMetGroup/loadeR/blob/devel/inst/vocabulary.txt) (see `loadeR::c4R.vocabulary()`)
 
@@ -40,7 +40,7 @@ The (*) symbol indicates that the function is planned but not yet available.
 | function  	| Definition                                      	| psl 	| ps 	| tas 	| dpds 	| tdps 	| zgs 	| huss 	| hurs 	| rsds 	| rlds 	|
 |-----------	|-------------------------------------------------	|-----	|----	|-----	|------	|------	|----	|------	|------	|------	|------	|
 | `psl2ps`    	| Sea-level pressure to surface pressure          	| X   	|    	| X   	|      	|      	| X  	|      	|      	|      	|      	|
-| `ps2psl`*    	| Surface pressure to sea-level pressure          	|     	| X  	| X   	|      	|      	| X  	|      	|      	|      	|      	|
+| `ps2psl`    	| Surface pressure to sea-level pressure          	|     	| X  	| X   	|      	|      	| X  	|      	|      	|      	|      	|
 | `rad2cc`    	| Radiation to cloud cover                        	|     	|    	|     	|      	|      	|    	|      	|      	| X    	| X    	|
 | `huss2hurs` 	| Specific humidity to relative humidity          	|     	| X  	| X   	|      	|      	|    	| X    	|      	|      	|      	|
 | `hurs2huss` 	| Relative humidity from specific humidity        	|     	| X  	| X   	|      	|      	|    	|      	| X    	|      	|      	|
