@@ -4,7 +4,7 @@
 
 ## Installation and requirements
 
-Physical quantity handling is done via the Unidata's [UDUNITS-2](https://www.unidata.ucar.edu/software/udunits/) software libraries, tailoring the functionalities of the R package `udunits2` to the **climate4R** framework. Thus, the C-based UDUNITS-2 package **must be installed in your system** prior to package installation ([link to installation](https://www.unidata.ucar.edu/downloads/udunits/index.jsp)).
+Physical quantity handling is done via the Unidata's [UDUNITS-2](https://www.unidata.ucar.edu/software/udunits/) software libraries, tailoring the functionalities of the R package `udunits2` to the **climate4R** framework. Thus, the C-based UDUNITS-2 package **must be installed in your system** prior to package installation ([link to installation instructions](https://www.unidata.ucar.edu/software/udunits/udunits-current/doc/udunits/udunits2.html#Installation)).
 
 Then, `install_github` can be used:
 
