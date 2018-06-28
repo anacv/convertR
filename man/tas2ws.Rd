@@ -48,7 +48,15 @@ spatialPlot(climatology(ws), backdrop.theme = "coastline")
 \seealso{
 Other derivation: \code{\link{hurs2huss}},
   \code{\link{hurs2w}}, \code{\link{huss2hurs}},
-  \code{\link{huss2pvp}}, \code{\link{rad2cc}}
+  \code{\link{huss2pvp}}, \code{\link{ps2psl}},
+  \code{\link{psl2ps}}, \code{\link{rad2cc}}
+
+Other humidity: \code{\link{hurs2huss}},
+  \code{\link{hurs2w}}, \code{\link{huss2hurs}},
+  \code{\link{huss2pvp}}
+
+Other pressure: \code{\link{huss2pvp}},
+  \code{\link{ps2psl}}, \code{\link{psl2ps}}
 }
 \author{
 J. Bedia, S. Herrera

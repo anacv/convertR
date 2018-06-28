@@ -28,6 +28,8 @@
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
 #' @family derivation
+#' @family humidity
+#' @family pressure
 #' @template templateRefHumidity
 #' @details The partial pressure of a gaseous constituent of air (water vapor in this case)
 #'  is the pressure which it alone would exert with unchanged temperature and number of moles per unit volume.

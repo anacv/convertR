@@ -33,6 +33,8 @@
 #' @template templateUnits
 #' @template templateRefHumidity
 #' @family derivation
+#' @family humidity
+#' @family pressure
 #' @examples
 #' data("ps.iberia")
 #' data("tas.iberia")

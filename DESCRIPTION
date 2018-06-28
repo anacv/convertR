@@ -11,17 +11,19 @@ Suggests:
     loadeR.ECOMS,
     visualizeR
 Type: Package
-Title: A climate4R Package for Performing Unit Conversion and Variable Derivation
-Version: 0.1.1
-Date: 2018-06-26
+Title: A climate4R Package for Unit Conversion and Variable Derivation
+Version: 0.1.2
+Date: 2018-06-28
 Authors@R: as.person(c(
     "Santander Meteorology Group <http://meteo.unican.es> [cph]",
     "Joaquin Bedia <bediaj@unican.es> [aut, cre]",
-    "Sixto Herrera <herreras@unican.es> [aut]"))
+    "Antonio Cofiño <cofinoa@unican.es> [ctb]",
+    "Sixto Herrera <herreras@unican.es> [aut]",
+    "Maialen Iturbide <miturbide@ifca.unican.es> [ctb]"))
 BugReports: https://github.com/SantanderMetGroup/convertR/issues
 URL: https://github.com/SantanderMetGroup/convertR
 Encoding: UTF-8
-Description: Implements different variable derivations and unit transformations exploiting the UDUNITS capabilitites for the climate4R CDM (<http://meteo.unican.es/climate4r>).
+Description: Implements different variable derivations and unit transformations exploiting the UDUNITS-2 capabilitites for the climate4R CDM (<http://meteo.unican.es/climate4R>).
 License: file LICENSE
 LazyData: true
 RoxygenNote: 6.0.1

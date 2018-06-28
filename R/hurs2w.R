@@ -39,6 +39,7 @@
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
 #' @family derivation
+#' @family humidity
 #' @template templateRefHumidity
 #' @examples
 #' data("ps.iberia")
