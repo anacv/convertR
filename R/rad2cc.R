@@ -29,6 +29,7 @@
 #' @family derivation
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
+#' @importFrom utils packageVersion
 #' @examples
 #' data("rsds.iberia")
 #' data("rlds.iberia")
@@ -109,6 +110,8 @@ rad2cc <- function(rsds = NULL, rlds = NULL, rtds = NULL) {
     attr(cc$Variable, "units") <- "1"
     attr(cc$Variable, "longname") <- "cloud_area_fraction"
     attr(cc$Variable, "description") <- "Estimated cloud area fraction from radiation"
+    attr(cc, "origin") <- paste0("Calculated with R package 'convertR' v", packageVersion("convertR"))
+    attr(cc, "URL") <- "https://github.com/SantanderMetGroup/convertR"
     message("[", Sys.time(), "] Done.")
     invisible(cc)
 }

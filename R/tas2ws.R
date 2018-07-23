@@ -96,6 +96,8 @@ tas2ws <- function(tas, ps) {
     attr(wt$Variable, "units") <- "atm"
     attr(wt$Variable, "longname") <- "water_vapour_saturation_pressure"
     attr(wt$Variable, "description") <- "Estimated water vapour saturation pressure"
+    attr(wt, "origin") <- paste0("Calculated with R package 'convertR' v", packageVersion("convertR"))
+    attr(wt, "URL") <- "https://github.com/SantanderMetGroup/convertR"
     message("[", Sys.time(), "] Done.")
     invisible(wt)
 }

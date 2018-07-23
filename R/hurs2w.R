@@ -38,6 +38,7 @@
 #' @import transformeR
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
+#' @importFrom utils packageVersion
 #' @family derivation
 #' @family humidity
 #' @template templateRefHumidity
@@ -91,6 +92,8 @@ hurs2w <- function(ps, tas, hurs) {
     attr(w$Variable, "units") <- "1"
     attr(w$Variable, "longname") <- "humidity_mixing_ratio"
     attr(w$Variable, "description") <- "Humidity mixing ratio of a parcel of moist air is the ratio of the mass of water vapor to the mass of dry air"
+    attr(w, "origin") <- paste0("Calculated with R package 'convertR' v", packageVersion("convertR"))
+    attr(w, "URL") <- "https://github.com/SantanderMetGroup/convertR"
     message("[", Sys.time(), "] Done.")
     invisible(w)
 }

@@ -28,6 +28,7 @@
 #' @import transformeR
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
+#' @importFrom utils packageVersion
 #' @family derivation
 #' @family humidity
 #' @template templateRefHumidity
@@ -84,6 +85,8 @@ huss2hurs <- function(huss, ps, tas) {
     attr(hurs$Variable, "units") <- "%"
     attr(hurs$Variable, "longname") <- "Surface_air_relative_humidity"
     attr(hurs$Variable, "description") <- "Estimated relative humidity from saturation pressure and specific humidity"
+    attr(hurs, "origin") <- paste0("Calculated with R package 'convertR' v", packageVersion("convertR"))
+    attr(hurs, "URL") <- "https://github.com/SantanderMetGroup/convertR"
     message("[", Sys.time(), "] Done.")
     invisible(hurs)
 }

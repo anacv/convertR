@@ -28,6 +28,7 @@
 #' @import transformeR
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
+#' @importFrom utils packageVersion
 #' @family derivation
 #' @family humidity
 #' @template templateRefHumidity
@@ -63,6 +64,8 @@ hurs2huss <- function(hurs, ps, tas) {
     attr(huss$Variable, "units") <- "kg/kg"
     attr(huss$Variable, "longname") <- "specific_humidity"
     attr(huss$Variable, "description") <- "The ratio of the mass of water vapor to the total mass of the moist air parcel"
+    attr(huss, "origin") <- paste0("Calculated with R package 'convertR' v", packageVersion("convertR"))
+    attr(huss, "URL") <- "https://github.com/SantanderMetGroup/convertR"
     message("[", Sys.time(), "] Done.")
     invisible(huss)
 }

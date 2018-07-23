@@ -12,8 +12,8 @@ Suggests:
     visualizeR
 Type: Package
 Title: A climate4R Package for Unit Conversion and Variable Derivation
-Version: 0.1.2
-Date: 2018-06-28
+Version: 0.1.3
+Date: 2018-07-23
 Authors@R: as.person(c(
     "Santander Meteorology Group <http://meteo.unican.es> [cph]",
     "Joaquin Bedia <bediaj@unican.es> [aut, cre]",
