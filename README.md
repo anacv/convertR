@@ -1,3 +1,6 @@
+
+ <a href="https://unidata.ucar.edu/software/udunits" title="UDUnits"><img src="https://unidata.ucar.edu/images/logos/badges/badge_udunits_100.jpg" width="100px"></a>
+ 
 # `convertR`: A climate4R package for unit conversion and variable derivation
 
 `convertR` is an R package performing unit conversion and variable derivation using the [**climate4R**](http://meteo.unican.es/climate4r) Common Data Model.
