@@ -21,5 +21,9 @@
     * `ps2psl`, performing the reverse operation
  * Other minor changes and doc updates
 
-## v0.1.3 (in devel)
+## v0.2.0 (22 Feb 2020)
  * Add package description attributes to outputs
+ * New humidity-related conversion functions:
+    * `tdps2hurs`, to estimate moist air relative humidity (>50%) from dewpoint temperature
+    * `hurs2tdps`, performing the reverse operation
+ * Other minor changes and doc updates
