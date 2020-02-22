@@ -27,6 +27,7 @@
 #' @import transformeR
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
+#' @importFrom utils packageVersion
 #' @family derivation
 #' @family humidity
 #' @family pressure
@@ -91,6 +92,8 @@ huss2pvp <- function(huss, ps) {
     attr(pvp$Variable, "units") <- "Pa"
     attr(pvp$Variable, "longname") <- "water_vapor_partial_pressure_in_air"
     attr(pvp$Variable, "description") <- "Estimated partial vapour pressure"
+    attr(pvp, "origin") <- paste0("Calculated with R package 'convertR' v", packageVersion("convertR"))
+    attr(pvp, "URL") <- "https://github.com/SantanderMetGroup/convertR"
     message("[", Sys.time(), "] Done.")
     invisible(pvp)
 }

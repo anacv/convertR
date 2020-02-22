@@ -32,6 +32,7 @@
 #' pressure is usually provided.
 #' @importFrom magrittr %>% %<>% extract2
 #' @importFrom udunits2 ud.are.convertible
+#' @importFrom utils packageVersion
 #' @family derivation
 #' @family pressure
 #' @examples
@@ -112,6 +113,8 @@ psl2ps <- function(psl, tas, zgs) {
     attr(ps$Variable, "units") <- "Pa"
     attr(ps$Variable, "longname") <- "surface_pressure"
     attr(ps$Variable, "description") <- "Estimated surface pressure from sea-level pressure"
+    attr(ps, "origin") <- paste0("Calculated with R package 'convertR' v", packageVersion("convertR"))
+    attr(ps, "URL") <- "https://github.com/SantanderMetGroup/convertR"
     message("[", Sys.time(), "] Done.")
     invisible(ps)
 }

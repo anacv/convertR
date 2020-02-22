@@ -20,3 +20,6 @@
     * `psl2ps`, to reduce sea-level pressure to surface pressure
     * `ps2psl`, performing the reverse operation
  * Other minor changes and doc updates
+
+## v0.1.3 (in devel)
+ * Add package description attributes to outputs

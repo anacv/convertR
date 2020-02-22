@@ -59,15 +59,19 @@ spatialPlot(climatology(w), rev.colors = TRUE, backdrop.theme = "coastline")
 }
 \seealso{
 Other derivation: \code{\link{hurs2huss}},
-  \code{\link{huss2hurs}}, \code{\link{huss2pvp}},
-  \code{\link{ps2psl}}, \code{\link{psl2ps}},
-  \code{\link{rad2cc}}, \code{\link{tas2ws}}
+  \code{\link{hurs2tdps}}, \code{\link{huss2hurs}},
+  \code{\link{huss2pvp}}, \code{\link{ps2psl}},
+  \code{\link{psl2ps}}, \code{\link{rad2cc}},
+  \code{\link{tas2ws}}, \code{\link{tdps2hurs}}
 
 Other humidity: \code{\link{hurs2huss}},
-  \code{\link{huss2hurs}}, \code{\link{huss2pvp}},
-  \code{\link{tas2ws}}
+  \code{\link{hurs2tdps}}, \code{\link{huss2hurs}},
+  \code{\link{huss2pvp}}, \code{\link{tas2ws}},
+  \code{\link{tdps2hurs}}
 }
 \author{
 J. Bedia, S. Herrera
 }
+\concept{derivation}
+\concept{humidity}
 \keyword{internal}

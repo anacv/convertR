@@ -44,10 +44,12 @@ identical(cc2, cc)
 }
 \seealso{
 Other derivation: \code{\link{hurs2huss}},
-  \code{\link{hurs2w}}, \code{\link{huss2hurs}},
-  \code{\link{huss2pvp}}, \code{\link{ps2psl}},
-  \code{\link{psl2ps}}, \code{\link{tas2ws}}
+  \code{\link{hurs2tdps}}, \code{\link{hurs2w}},
+  \code{\link{huss2hurs}}, \code{\link{huss2pvp}},
+  \code{\link{ps2psl}}, \code{\link{psl2ps}},
+  \code{\link{tas2ws}}, \code{\link{tdps2hurs}}
 }
 \author{
 J. Bedia, S. Herrera
 }
+\concept{derivation}
