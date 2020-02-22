@@ -47,7 +47,8 @@ The (*) symbol indicates that the function is planned but not yet available.
 | `tas2ws`    	| Saturation vapor pressure from temperature      	|     	| X  	| X   	|      	|      	|    	|      	|      	|      	|      	|
 | `hurs2w`    	| Water vapor mixing ratio from relative humidity 	|     	| X  	| X   	|      	|      	|    	|      	| X    	|      	|      	|
 | `dpds2hurs`* 	| Relative humidity from dew-point depression     	|     	| X  	| X   	| X    	|      	|    	|      	|      	|      	|      	|
-| `tdps2hurs`* 	| Relative humidity from dew-point temperature    	|     	|    	| X   	|      	| X    	|    	|      	|      	|      	|      	|
+| `tdps2hurs` 	| Relative humidity from dew-point temperature    	|     	|    	| X   	|      	| X    	|    	|      	|      	|      	|      	|
+| `hurs2tdps` 	| Dew-point temperature from relative humidity    	|     	|    	| X   	|      	|     	|    	|      	| X    	|      	|      	|
 | `huss2pvp`  	| Partial vapor pressure from specific humidity   	|     	| X  	|     	|      	|      	|    	| X    	|      	|      	|      	|
 
 
