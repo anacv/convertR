@@ -55,7 +55,8 @@ The adjustment formulae of pressure values to other levels are those routinely u
 Other derivation: \code{\link{hurs2huss}},
   \code{\link{hurs2w}}, \code{\link{huss2hurs}},
   \code{\link{huss2pvp}}, \code{\link{psl2ps}},
-  \code{\link{rad2cc}}, \code{\link{tas2ws}}
+  \code{\link{rad2cc}}, \code{\link{tas2ws}},
+  \code{\link{tdps2hurs}}
 
 Other pressure: \code{\link{huss2pvp}},
   \code{\link{psl2ps}}, \code{\link{tas2ws}}
@@ -63,3 +64,5 @@ Other pressure: \code{\link{huss2pvp}},
 \author{
 J. Bedia, S. Herrera
 }
+\concept{derivation}
+\concept{pressure}

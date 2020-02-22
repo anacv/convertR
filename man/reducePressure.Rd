@@ -13,7 +13,7 @@ reducePressure(p, t, zgs, direction)
 
 \item{zgs}{A matrix of geopotential height (static variable, all rows are equal, in meters)}
 
-\item{paux}{Auxiliar grid (one single member, dropped)}
+\item{direction}{Direction of the conversion, either \code{"ps2psl"} or \code{"psl2ps"}.}
 }
 \value{
 A 2D matrix with reduced pressure data. Need to be reconverted to a grid using \code{\link[transformeR]{mat2Dto3Darray}} afterwards.
