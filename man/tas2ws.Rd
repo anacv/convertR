@@ -46,19 +46,29 @@ spatialPlot(climatology(ws), backdrop.theme = "coastline")
 }
 }
 \seealso{
-Other derivation: \code{\link{hurs2huss}},
-  \code{\link{hurs2tdps}}, \code{\link{hurs2w}},
-  \code{\link{huss2hurs}}, \code{\link{huss2pvp}},
-  \code{\link{ps2psl}}, \code{\link{psl2ps}},
-  \code{\link{rad2cc}}, \code{\link{tdps2hurs}}
+Other derivation: 
+\code{\link{hurs2huss}()},
+\code{\link{hurs2tdps}()},
+\code{\link{hurs2w}()},
+\code{\link{huss2hurs}()},
+\code{\link{huss2pvp}()},
+\code{\link{ps2psl}()},
+\code{\link{psl2ps}()},
+\code{\link{rad2cc}()},
+\code{\link{tdps2hurs}()}
 
-Other humidity: \code{\link{hurs2huss}},
-  \code{\link{hurs2tdps}}, \code{\link{hurs2w}},
-  \code{\link{huss2hurs}}, \code{\link{huss2pvp}},
-  \code{\link{tdps2hurs}}
+Other humidity: 
+\code{\link{hurs2huss}()},
+\code{\link{hurs2tdps}()},
+\code{\link{hurs2w}()},
+\code{\link{huss2hurs}()},
+\code{\link{huss2pvp}()},
+\code{\link{tdps2hurs}()}
 
-Other pressure: \code{\link{huss2pvp}},
-  \code{\link{ps2psl}}, \code{\link{psl2ps}}
+Other pressure: 
+\code{\link{huss2pvp}()},
+\code{\link{ps2psl}()},
+\code{\link{psl2ps}()}
 }
 \author{
 J. Bedia, S. Herrera

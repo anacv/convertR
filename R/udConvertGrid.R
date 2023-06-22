@@ -50,6 +50,7 @@
 #'
 #' @examples
 #' library(transformeR)
+#' require(climate4R.datasets)
 #' data("NCEP_Iberia_ta850")
 #' # Converting from Kelvin to Celsius:
 #' getGridUnits(NCEP_Iberia_ta850)

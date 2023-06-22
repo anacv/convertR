@@ -9,7 +9,8 @@ Suggests:
     downscaleR,      
     loadeR,
     loadeR.ECOMS,
-    visualizeR
+    visualizeR,
+    climate4R.datasets
 Type: Package
 Title: A climate4R Package for Unit Conversion and Variable Derivation
 Version: 0.2.1
