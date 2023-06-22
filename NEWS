@@ -27,3 +27,7 @@
     * `tdps2hurs`, to estimate moist air relative humidity (>50%) from dewpoint temperature
     * `hurs2tdps`, performing the reverse operation
  * Other minor changes and doc updates
+
+## v0.2.1 (22 Jun 2023)
+ * Add .gitignore
+ * Update R CMD check with roxygen2 7.1.2

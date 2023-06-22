@@ -12,8 +12,8 @@ Suggests:
     visualizeR
 Type: Package
 Title: A climate4R Package for Unit Conversion and Variable Derivation
-Version: 0.2.0
-Date: 2020-02-22
+Version: 0.2.1
+Date: 2023-06-22
 Authors@R: c(person("Bedia", "Joaquín", email = "bediaj@unican.es", role = c("aut","cre"), comment = c(ORCID = "0000-0001-6219-4312")),
              person("Cofiño", "Antonio", email = "cofinoa@unican.es", role = "ctb"),
              person("Herrera", "Sixto", email = "herreras@unican.es", role = "ctb"),
@@ -25,4 +25,4 @@ Encoding: UTF-8
 Description: Implements different variable derivations and unit transformations exploiting the UDUNITS-2 capabilitites for the climate4R CDM (<http://meteo.unican.es/climate4R>).
 License: file LICENSE
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.2
